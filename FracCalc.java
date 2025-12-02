@@ -1,5 +1,5 @@
-// Student Name
-// Period X
+// Samick Churi
+// Period 6
 // Fraction Calculator Project
 
 import java.util.*;
@@ -22,7 +22,7 @@ public class FracCalc {
       // When the user types in "quit", we are done.
       while (!done) {
          // prompt the user for input
-         String input = getInput();
+         String input = getInput(console);
          
          // special case the "quit" command
          if (input.equalsIgnoreCase("quit")) {
@@ -43,9 +43,11 @@ public class FracCalc {
 
    // Prompt the user with a simple, "Enter: " and get the line of input.
    // Return the full line that the user typed in.
-   public static String getInput() {
+   public static String getInput(Scanner console) {
       // TODO: Implement this method
-       return "quit";
+      System.out.print("Enter: ");
+      String input = console.nextLine();
+       return input;
 
    }
    
@@ -82,7 +84,7 @@ public class FracCalc {
    public static String processExpression(String input) {
       // TODO: implement this method!
     
-        return "reduced result of expression";
+        return input;
 
    }
    
