@@ -83,8 +83,46 @@ public class FracCalc {
    //        2 1/4
    public static String processExpression(String input) {
       // TODO: implement this method!
-    
-        return input;
+         int first = input.indexOf(" ");
+         String part = input.substring(first + 1);
+         int second = part.indexOf(" ");
+   
+         String op = input.substring(first + 1, first +2);
+         String fractionChunk = part.substring(second + 1);
+
+         String wholePart;
+         String numerator;
+         String denominator;
+
+
+         int underScore = fractionChunk.indexOf("_");
+         int slash = fractionChunk.indexOf("/");
+         if(underScore != -1){
+            wholePart = fractionChunk.substring(0,underScore);
+            numerator = fractionChunk.substring(underScore+1,slash);
+            denominator = fractionChunk.substring(slash + 1);
+         }
+         else if (slash != -1){
+            wholePart = "0";
+            numerator = fractionChunk.substring(0,slash);
+            denominator = fractionChunk.substring(slash + 1);
+         }
+         else{
+            wholePart = fractionChunk;
+            numerator = "0";
+            denominator = "1";
+         }
+         if(Integer.parseInt(numerator) < 0 && Integer.parseInt(denominator)<0){
+            numerator = numerator.substring(1);
+            denominator = denominator.substring(1);
+         }
+         else if (Integer.parseInt(denominator)<0){
+            numerator = "-" + numerator;
+            denominator = "-" + denominator;
+         }
+
+
+        return "Op:" + op + " Whole:" + wholePart + " Num:" + numerator +" Den:" + denominator;
 
    }
    
