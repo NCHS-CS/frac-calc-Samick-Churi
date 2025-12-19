@@ -81,6 +81,7 @@ public class FracCalc {
    //        1
    //        2 1/8
    //        2 1/4
+
    public static String processExpression(String input) {
       //Extracts the first number string, operator, and second number string
       String first = numberOne(input); //Takes the first operand string
@@ -106,6 +107,7 @@ public class FracCalc {
       //Formats the final fraction properly into a mixed number and decreases it
       return prettier(finalnumerator,finaldenominator);
    }
+
       //Returns whole number
       //Parses fraction string to find the whole number.
       public static int returnWholenumber(String fraction2){
@@ -151,6 +153,7 @@ public class FracCalc {
                   return 1;
                }
       }
+
       //Find the GCF between the 2 fractions to be used to reduce the final fraction
       //GCF is used to give a common base
       public static int greatestCommonfactor(int a, int b){
@@ -164,6 +167,7 @@ public class FracCalc {
          }
          return greatest;
          }
+         
       //Takes a fractions string and converts it into an equivalant improper fraction
       //Handles the whole number as well
       public static String improperFrac(String output){
@@ -276,16 +280,21 @@ public class FracCalc {
                return output;
 
          }
-
+         //Handles formatting issues and details, can be improper or proper fraction, 
          public static String expections(int whole, int remainder, int finaldenominator, int finalnumerator){
             if(remainder == 0){
+               //If it's a Perfect whole number
                return whole + "";
             }
 
+            // If the proper fraction result(Whole number is = to 0) 
             if(whole == 0){
                if(finalnumerator < 0){
-                  return "-" + remainder + "/" + finaldenominator;
+                  //Use the sign of the final numerator to decide if a '-' symbol is needed
+                  return "-" + remainder + "/" + finaldenominator; //ex. 1/2
                }else{
+                  //If theres a mixed number result like a non whole or a non 0 remainder item
+                  //Format uses a space between the whole number and the fraction
                   return remainder + "/" + finaldenominator;
                }
                }
