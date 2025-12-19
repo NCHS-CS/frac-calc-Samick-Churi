@@ -352,8 +352,10 @@ public class FracCalc {
    public static String provideHelp() {
       // TODO: Update this help text!
      
-      String help = "You must change this text.\n";
-      help += "Students, you need to provide actual helpful text here!";
+      //Provides the user with help if they request for it
+      //Tells the user how to format items such as impropers and standards.
+      String help = "Hi, seems like you need help!\n";
+      help += "Enter 2 numbers seperated by an operator and put a space between each number.\nFor example 2 / 3 + 6 / 7\nIf it's an improper fraction then state it like this: 1_1/3.\nFollow the format whole number_numerator/denominator";
       
       return help;
    }
